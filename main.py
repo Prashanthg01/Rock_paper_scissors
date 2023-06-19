@@ -1,15 +1,13 @@
 import random
 
-choices = ['rock', 'paper', 'scissors', 'lizard', 'Spock']
+choices = ['rock', 'paper', 'scissors']
 
 def determine_winner(player_choice, computer_choice):
     if player_choice == computer_choice:
         return 'tie'
-    elif (player_choice == 'rock' and computer_choice in ['scissors', 'lizard']) or \
-         (player_choice == 'paper' and computer_choice in ['rock', 'Spock']) or \
-         (player_choice == 'scissors' and computer_choice in ['paper', 'lizard']) or \
-         (player_choice == 'lizard' and computer_choice in ['paper', 'Spock']) or \
-         (player_choice == 'Spock' and computer_choice in ['rock', 'scissors']):
+    elif (player_choice == 'rock' and computer_choice == 'scissors') or \
+         (player_choice == 'paper' and computer_choice == 'rock') or \
+         (player_choice == 'scissors' and computer_choice == 'paper'):
         return 'player'
     else:
         return 'computer'
@@ -27,13 +25,13 @@ def play_game():
     computer_score = 0
     total_rounds = 0
 
-    print("Welcome to Rock Paper Scissors Lizard Spock!")
+    print("Welcome to Rock Paper Scissors!")
     name = input("Enter your name: ")
 
     while True:
         print_choices()
-        player_choice = input("Enter your choice (1-5): ")
-        if player_choice.isdigit() and 1 <= int(player_choice) <= 5:
+        player_choice = input("Enter your choice (1-3): ")
+        if player_choice.isdigit() and 1 <= int(player_choice) <= 3:
             player_choice = choices[int(player_choice) - 1]
         else:
             print("Invalid choice. Please try again.")
