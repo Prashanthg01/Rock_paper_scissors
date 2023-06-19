@@ -63,10 +63,14 @@ def play_game():
                 print("Computer is the winner!")
             else:
                 print("It's a tie overall!")
-            break
 
-        play_again = input("Play again? (y/n): ")
-        if play_again.lower() != 'y':
-            break
+            play_again = input("Play again? (y/n): ")
+            if play_again.lower() == 'y':
+                player_score = 0
+                computer_score = 0
+                total_rounds = 0
+                continue
+            else:
+                break
 
 play_game()
